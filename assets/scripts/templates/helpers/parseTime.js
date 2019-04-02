@@ -17,7 +17,10 @@ const parseTime = date => {
 
   output = `${hour % 12}:00 ${m}`
 
-  return !hour ? 'Midnight' : output
+  if (!hour) { output = 'Midnight' }
+  if (!(hour - 12)) { output = 'Noon' }
+
+  return output
 }
 
 module.exports = parseTime
