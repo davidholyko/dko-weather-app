@@ -6,6 +6,12 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const apiKey = require('./weather/api-key')
+const weatherEvents = require('./weather/events')
+
 $(() => {
   // your JS code goes here
+  apiKey()
+  weatherEvents.addHandlers()
+  weatherEvents.onPageLoad()
 })
