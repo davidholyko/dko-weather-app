@@ -1,14 +1,21 @@
 {{#each weatherItems as |weatherItem|}}
 
-<div class="carousel-item">
-  <div class="position-fixed text-light p-5">
-    <h1>Date: {{parseDate weatherItem.dt_txt}}</h1>
-    <h1>Time: {{parseTime weatherItem.dt_txt}}</h1>
-    <h1>Conditions: {{parseWeatherCondition weatherItem.weather.[0].main}}</h1>
-    <h1>Temperature: {{farenheight weatherItem.main.temp}}° F</h1>
-    <h1>City: {{weatherItem.city}}</h1>
+  <div id="carousel-{{weatherItem.index}}" class="carousel-item">
+    <div class="position-fixed text-light p-5 d-flex w-100">
+
+      <div class="d-flex flex-column col-6">
+        <h1>Date: {{parseDate weatherItem.dt_txt}}</h1>
+        <h1>Time: {{parseTime weatherItem.dt_txt}}</h1>
+        <h1>Conditions: {{parseWeatherCondition weatherItem.weather.[0].main}}</h1>
+        <h1>Temperature: {{farenheight weatherItem.main.temp}}° F</h1>
+        <h1>City: {{weatherItem.city}}</h1>
+      </div>
+
+      <div class="col-6 justify-content-center d-flex">
+        <canvas id="temperature-chart-{{weatherItem.index}}" class="weather-chart" width="100" height="400"></canvas>
+      </div>
+    </div>
+    <img class="d-block w-100" src="public/images/{{weatherItem.weather.[0].main}}-0.jpg" alt="slide">
   </div>
-  <img class="d-block w-100" src="public/images/{{weatherItem.weather.[0].main}}-0.jpg" alt="slide">
-</div>
 
 {{/each}}
