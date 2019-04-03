@@ -20,17 +20,11 @@ const months = {
 }
 
 const parseDate = date => {
-  console.log(typeof date)
-
   let output = ''
 
   const year = date.substring(0, 4)
   const month = date.substring(5, 7)
   const day = date.substring(8, 10)
-
-  console.log(year)
-  console.log(month)
-  console.log(day)
 
   output = `${months[Number(month)]} ${Number(day)} ${year}`
 

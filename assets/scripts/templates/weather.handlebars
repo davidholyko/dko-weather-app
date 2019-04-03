@@ -17,7 +17,7 @@
     <div class="position-fixed text-light p-5 d-flex w-100">
 
       <div class="d-flex flex-column col-10">
-        <h1>Date: {{parseDate weatherItem.dt_txt}}</h1>
+        <h1>Date: {{parseDay weatherItem.dt}}, {{parseDate weatherItem.dt_txt}}</h1>
         <h1>Time: {{parseTime weatherItem.dt_txt}}</h1>
         <h1>Conditions: {{parseWeatherCondition weatherItem.weather.[0].main}}</h1>
         <h1>Temperature: {{farenheight weatherItem.main.temp}}° F</h1>
