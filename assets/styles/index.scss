@@ -1,7 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
 
+html {
+  background-color: 'black';
+}
+
 body {
   background-color: 'black';
+}
+
+.dropdown-item {
+  margin: 0;
+  padding: 0 4px 4px;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #333;
+  }
 }
 
 .carousel-item {

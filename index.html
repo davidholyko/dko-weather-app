@@ -17,25 +17,26 @@
   <div id="weather-page">
     <div id="weather-container">
       <div id="weather-content">
+        <div class="position-fixed text-center p-2 w-100 z">
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="city-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select a city
+            </button>
+            <div class="dropdown-menu p-0 m-0" aria-labelledby="dropdownMenuButton">
+              <p class="dropdown-item city" data-city-id="4317656">Boston</p>
+              <p class="dropdown-item city" data-city-id="5131095">Philadelphia</p>
+              <p class="dropdown-item city" data-city-id="3882428">Los Angeles</p>
+              <p class="dropdown-item city" data-city-id="5128638">New York City</p>
+              <p class="dropdown-item city" data-city-id="1819729">Hong Kong</p>
+              <p class="dropdown-item city" data-city-id="524901">Moscow</p>
+            </div>
+          </div>
+
+        </div>
 
         <div id="weather-carousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
-
-            <div id="weather-carousel-items">
-
-
-              <div class="carousel-item active">
-
-                <div class="position-fixed text-light p-5 d-flex w-100">
-                  <div class="d-flex flex-column col-10 z">
-                    <h1 class="text-justify">Dko's simple weather app. Uses OpenWeather Api. Each carousel slide is a 3 hour weather snapshot of the selected city. Displays weather conditions and temperature. Click on the left and right side of the
-                      page to move the carousel to the next slide. Slides automatically move after 5 seconds.</h1>
-                  </div>
-                </div>
-                <img class="d-block w-100" src="public/images/Clear-0.jpg" alt="First slide">
-
-              </div>
-            </div>
+            <div id="weather-carousel-items"></div>
 
             <a class="carousel-control-prev" href="#weather-carousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -1,3 +1,16 @@
+<div class="carousel-item active">
+  <div class="position-fixed text-light p-5 d-flex w-100">
+    <div class="d-flex flex-column col-10 z">
+      <h1 class="text-justify">Dko's simple weather app. Uses OpenWeatherMap Api. Each carousel slide is a 3 hour weather snapshot of the selected city. Displays weather conditions and temperature. Click on the left and right side of the
+        page to move the carousel to the next slide. Slides automatically move after 5 seconds.
+      </h1>
+
+        <h1 class="text-center p-5 m-5">The current city is {{weatherItems.[0].city}} </h1>
+    </div>
+  </div>
+  <img class="d-block w-100" src="public/images/Clear-0.jpg" alt="First slide">
+</div>
+
 {{#each weatherItems as |weatherItem|}}
 
   <div id="carousel-{{weatherItem.index}}" class="carousel-item">

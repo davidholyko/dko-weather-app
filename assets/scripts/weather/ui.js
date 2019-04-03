@@ -11,8 +11,13 @@ const getWeatherDataSuccess = responseData => {
     item.index = index
   })
 
+  // $('body').fadeOut()
+  $('#weather-carousel-items').empty()
+
   $('#weather-carousel-items').append(weatherSlideTemplate({weatherItems: responseData.list}))
   responseData.list.forEach((item, index) => generateChart(index, conversion.kelvinToFarenheight(item.main.temp)))
+
+  // $('body').fadeIn()
 }
 
 const generateChart = (index, data) => {

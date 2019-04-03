@@ -3,14 +3,19 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onGetWeatherData = () => {
-  // city ID of Boston
-  const city = 4930956
-  api.getWeatherData(city)
+  let id = 4930956
+  if (event) { 
+    event.preventDefault()
+    id = $(event.target).data('city-id')
+  }
+  api.getWeatherData(id)
     .then(ui.getWeatherDataSuccess)
     .catch(console.error)
 }
 
-const addHandlers = () => {}
+const addHandlers = () => {
+  $('.city').on('click', onGetWeatherData)
+}
 
 const onPageLoad = () => {
   onGetWeatherData()
