@@ -22,19 +22,40 @@ const generateChart = (index, data) => {
     data: {
       datasets: [{
         label: 'Temp',
+        // fontSize: '24px',
+        color: 'white',
         data: [data],
-        backgroundColor: [ 'blue' ],
+        backgroundColor: [ 'white' ],
         borderColor: [ 'black' ],
         borderWidth: 1
       }]
     },
     options: {
+      legend: {
+        labels: {
+          fontSize: 0
+        }
+      },
       scales: {
+        scaleLabel: {
+          fontSize: 24
+        },
         yAxes: [{
           ticks: {
             beginAtZero: true,
             max: 120,
-            min: -20
+            min: -20,
+            fontSize: 24,
+            fontColor: 'white'
+          },
+          gridLines: {
+            zeroLineWidth: 5,
+            zeroLineColor: 'black'
+          }
+        }],
+        xAxes: [{
+          gridLines: {
+            lineWidth: 50
           }
         }]
       },

@@ -3,7 +3,7 @@
   <div id="carousel-{{weatherItem.index}}" class="carousel-item">
     <div class="position-fixed text-light p-5 d-flex w-100">
 
-      <div class="d-flex flex-column col-6">
+      <div class="d-flex flex-column col-10">
         <h1>Date: {{parseDate weatherItem.dt_txt}}</h1>
         <h1>Time: {{parseTime weatherItem.dt_txt}}</h1>
         <h1>Conditions: {{parseWeatherCondition weatherItem.weather.[0].main}}</h1>
@@ -11,8 +11,11 @@
         <h1>City: {{weatherItem.city}}</h1>
       </div>
 
-      <div class="col-6 justify-content-center d-flex">
-        <canvas id="temperature-chart-{{weatherItem.index}}" class="weather-chart" width="100" height="400"></canvas>
+      <div class="col-2 text-center">
+        <h1 class="text-light">Thermometer</h1>
+        <div class="d-flex justify-content-center">
+          <canvas id="temperature-chart-{{weatherItem.index}}" class="weather-chart" height="500" width="100"></canvas>
+        </div>
       </div>
     </div>
     <img class="d-block w-100" src="public/images/{{weatherItem.weather.[0].main}}-0.jpg" alt="slide">
