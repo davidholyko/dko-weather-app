@@ -3,7 +3,7 @@ const conversion = require('./conversion')
 const Chart = require('chart.js')
 
 const getWeatherDataSuccess = responseData => {
-  console.log(responseData)
+  // console.log(responseData)
 
   // add city key to each weather item
   responseData.list.forEach((item, index) => {
@@ -11,13 +11,10 @@ const getWeatherDataSuccess = responseData => {
     item.index = index
   })
 
-  // $('body').fadeOut()
   $('#weather-carousel-items').empty()
 
   $('#weather-carousel-items').append(weatherSlideTemplate({weatherItems: responseData.list}))
   responseData.list.forEach((item, index) => generateChart(index, conversion.kelvinToFarenheight(item.main.temp)))
-
-  // $('body').fadeIn()
 }
 
 const generateChart = (index, data) => {
@@ -69,7 +66,12 @@ const generateChart = (index, data) => {
   })
 }
 
+const getWeatherDataFailure = () => {
+  $('#failure-modal').modal('show')
+}
+
 module.exports = {
   getWeatherDataSuccess,
+  getWeatherDataFailure,
   generateChart
 }
