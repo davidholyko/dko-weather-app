@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <img class="d-block w-100" src="public/images/{{weatherItem.weather.[0].main}}-0.jpg" alt="slide">
+    <img class="d-block w-100" src="public/images/{{parseCityAddress weatherItem.city}}{{weatherItem.weather.[0].main}}-0.jpg" alt="slide">
   </div>
 
 {{/each}}
